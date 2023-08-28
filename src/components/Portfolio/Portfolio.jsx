@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Portfolio.css';
 import ProjectList from '../ProjectList/ProjectList';
 import Toolbar from '../Toolbar/Toolbar';
@@ -30,7 +30,19 @@ function Portfolio({ projectList }) {
     console.log(select);
   }
 
-  return ()
+  return (
+    <div className='container'>
+      <Toolbar 
+        filters={filterButtonList}
+        selected={selected}
+        onSelectFilter={filter}
+      />
+
+      <div className='gallery'>
+        <ProjectList projects={filteredListProjects} /> 
+      </div>
+    </div>
+    );
 }
 
 export default Portfolio;
